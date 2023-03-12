@@ -18,7 +18,7 @@ function ResultSummary(props) {
         {breed} 이름으로는
         <br />
         <h1 className="fw-bold" style={textStyle}>
-          '{maxBreed[0]}' 가 가장 인기가 많아요.
+          '{maxBreed[0]}'가 가장 인기가 많네요!
         </h1>
       </h1>
     </div>

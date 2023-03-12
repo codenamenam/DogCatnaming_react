@@ -19,10 +19,6 @@ function ResultStat(props) {
     return <></>;
   }
 
-  const style = {
-    margin: 0,
-  };
-
   const imgStyle = {
     width: "100%",
     minHeight: "110px",
@@ -31,28 +27,34 @@ function ResultStat(props) {
   };
 
   const containerStyle = {
-    margin: "100px 36px 48px 36px",
+    margin: "120px 36px 24px 36px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
   };
   return (
-    <div className="ResultContainer" style={containerStyle}>
-      <Row xs={1} style={style}>
-        <Col xs={12} lg={6}>
-          <ResultSummary breed={breed} maxBreed={result[0]} />
-        </Col>
-        <Col xs={12} lg={6}>
-          <ShowChart result={result} />
-        </Col>
-      </Row>
-      <Row>
-        <Col className="justify-content-center">
-          <div>
-            <a href="https://www.animals.or.kr/center/adopt">
-              <img src="image/banner.png" style={imgStyle}></img>
-            </a>
+    <>
+      <div className="ResultContainer" style={containerStyle}>
+        <Col xs={12} className="d-flex flex-column align-items-center">
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <ResultSummary breed={breed} maxBreed={result[0]} />
           </div>
         </Col>
-      </Row>
-    </div>
+      </div>
+      <ShowChart result={result} />
+      <div>
+        <Row>
+          <Col className="justify-content-center">
+            <div>
+              <a href="https://www.animals.or.kr/center/adopt">
+                <img src="image/banner.png" style={imgStyle}></img>
+              </a>
+            </div>
+          </Col>
+        </Row>
+      </div>
+    </>
   );
 }
 

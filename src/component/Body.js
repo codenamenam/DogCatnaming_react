@@ -2,11 +2,12 @@
 import "../App.css";
 import React, { useState, useRef, useEffect } from "react";
 import Breed from "./Breed";
-
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/esm/Container";
+import dog from "../img/dogcat_dog.png";
+import cat from "../img/dogcat_cat.png";
 
 function Body() {
   const [animal, setAnimal] = useState(0);
@@ -18,22 +19,16 @@ function Body() {
   };
 
   const leftCardDeckStyle = {
-    float: "none",
     margin: "0 auto",
   };
 
   const rightCardDeckStyle = {
-    float: "none",
     margin: "0 auto",
   };
 
   const titleStyle = {
     display: "flex",
-    margin: "36px 0 48px 0",
-  };
-
-  const cardTitleStyle = {
-    margin: "0 auto",
+    margin: "100px 0 100px 0",
   };
 
   useEffect(() => {
@@ -52,35 +47,28 @@ function Body() {
           style={titleStyle}
           className="justify-content-center"
         >
-          <h1 className="fw-bold">동물을 선택해주세요.</h1>
+          <h1 className="fw-bold">
+            <span style={{ color: "rgb(169, 128, 87)" }}>
+              당신의 소중한 아이는
+            </span>{" "}
+            무슨 동물인가요?
+          </h1>
         </Col>
       </Row>
       <div>
-        <Row xs={2} className="justify-content-center">
-          <Col lg={6}>
+        <Row xs={2} md={2} className="g-4">
+          <Col xs={6} md={6}>
             <Card onClick={() => handleClick(1)} style={leftCardDeckStyle}>
-              <Card.Img
-                variant="top"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"
-              />
-              <Card.Body>
-                <Card.Title style={cardTitleStyle}>
-                  <h4>고양이</h4>
-                </Card.Title>
-              </Card.Body>
+              <div style={{ height: "400px", overflow: "hidden" }}>
+                <Card.Img variant="top" src={cat} style={{ width: "100%" }} />
+              </div>
             </Card>
           </Col>
-          <Col lg={6}>
+          <Col xs={6} md={6}>
             <Card onClick={() => handleClick(2)} style={rightCardDeckStyle}>
-              <Card.Img
-                variant="top"
-                src="https://cdn.crowdpic.net/detail-thumb/thumb_d_382A8A747FFDF073E20C13398D110DE7.jpg"
-              />
-              <Card.Body>
-                <Card.Title>
-                  <h4>강아지</h4>
-                </Card.Title>
-              </Card.Body>
+              <div style={{ height: "400px", overflow: "hidden" }}>
+                <Card.Img variant="top" src={dog} style={{ width: "100%" }} />
+              </div>
             </Card>
           </Col>
         </Row>

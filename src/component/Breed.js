@@ -103,8 +103,9 @@ function Breed(props) {
   const breedSelectElement = (
     <div style={selectContainerStyle}>
       <h1 style={titleStyle} className="h1 fw-bold">
-        반려동물의 종류는?
+        그렇다면, 어떤 종류일까요?
       </h1>
+
       <div className={styleType} style={breedCardContainerStyle}>
         {animal.map(
           (

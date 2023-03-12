@@ -23,10 +23,12 @@ function ShowChart(props) {
     legend: { position: "none" },
     colors: ["gray"],
     chartArea: {
-      width: "80%",
+      width: "70%",
+      height: "60%",
     },
     titleTextStyle: {
-      fontSize: 24,
+      fontSize: 30,
+      color: "rgb(67,67,68)",
     },
     vAxis: {
       textStyle: {
@@ -39,8 +41,15 @@ function ShowChart(props) {
       },
     },
   };
+
   const chart = (
-    <Chart chartType="BarChart" height="500px" data={data} options={options} />
+    <Chart
+      chartType="BarChart"
+      height="500px"
+      width="100%"
+      data={data}
+      options={options}
+    />
   );
 
   //차트 만들기
